@@ -16,6 +16,12 @@ rm -rf ~/Library/Developer/Xcode/DerivedData
 rm -rf ~/Library/Developer/Xcode/Archives
 ```
 
+### Set the created and modified file date for all files & folders to current date
+
+```bash
+find . -exec touch '{}' \;
+```
+
 ## General Commands
 
 ### Generate a UUID
