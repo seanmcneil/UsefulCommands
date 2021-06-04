@@ -32,6 +32,24 @@ uuidgen | tr ][:upper:]' '[:lower:]'
 
 ## Cocoapods
 
+### Remove Cocoapods from a project
+
+```bash
+pod deintegrate 
+```
+
+### Remove cached version of a specific pod
+
+```bash
+pod cache clean <POD_NAME> 
+```
+
+### Remove cached version of all pods
+
+```bash
+pod cache clean --all 
+```
+
 ### Lint a pod
 
 ```bash
@@ -42,6 +60,12 @@ pod lib lint
 
 ```bash
 pod lib lint --sources=trunk,<REPO_NAME>
+```
+
+### Update local podspec repo
+
+```bash
+pod repo update
 ```
 
 ## Simulator
