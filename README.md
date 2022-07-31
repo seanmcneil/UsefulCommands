@@ -106,6 +106,23 @@ xcrun simctl uninstall booted <BUNDLE_IDENTIFIER>
 xcrun simctl io booted recordVideo --codec=h264 --mask=black --force output.mov
 ```
 
+## git
+
+### Squash commits on current branch
+
+```bash
+git checkout branchToSquash
+git reset $(git merge-base main $(git branch --show-current))
+git add -A
+git commit -m "squashed branch"
+```
+
+### Delete local branches that have been merged on remote
+
+```bash
+git fetch -p ; git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d
+```
+
 ## FFmpeg
 
 ### Preview sizes for App Store videos (sizes in portrait)
